@@ -1,4 +1,4 @@
-# electron-vue-boilerplate
+# squad-vue 
 
 
 

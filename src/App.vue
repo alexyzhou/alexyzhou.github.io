@@ -1,6 +1,7 @@
 <template>
-  <h1 class="text-3xl font-bold underline">💖 Hello World!</h1>
-  <p>Welcome to your Electron application.</p>
+  <suspense>
+    <router-view></router-view>
+  </suspense>
 </template>
 
 <script setup>
