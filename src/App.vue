@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import InputBox from "./components/InputBox.vue";
 import ChatMessages from "./components/ChatMessages.vue";
+import AgentList from "./components/AgentList.vue";
 
 // variables
 const chatMessagesComp = ref(null);
@@ -45,8 +46,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-full w-full bg-gray-100">
-    <div class="flex flex-row h-full w-full">
+  <div class="h-full w-full bg-gray-100 flex flex-col">
+    <div class="bg-white h-10 flex flex-row space-x-4 shadow-md px-6">
+      <span
+        class="h-full flex flex-none items-center text-slate-400 text-sm italic"
+        >Multi-Agent Demo</span
+      >
+      <div class="flex flex-row flex-auto">
+        <div class="flex-auto"></div>
+        <div class="flex-none flex">
+          <AgentList />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row w-full flex-grow-0">
       <ChatMessages
         ref="chatMessagesComp"
         class="px-4 mt-2 flex-grow-0"

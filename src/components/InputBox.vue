@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import AgentList from "./AgentList.vue";
 const emits = defineEmits(["send"]);
 
 defineProps<{
@@ -21,26 +20,27 @@ function clickSend() {
 </script>
 
 <template>
-  <div class="flex flex-row items-center h-16 rounded-xl bg-white px-4 shadow-lg">
-    <div class="flex-grow">
+  <div
+    class="flex flex-row items-center h-16 rounded-xl bg-white px-4 shadow-lg"
+  >
+    <div class="flex-auto">
       <div class="relative w-full">
         <input
           v-model="msgInput"
           type="text"
-          class="flex w-full border border-indigo-100 rounded-lg focus:outline-none focus:border-indigo-300 pl-4 h-10"
+          class="flex w-full border border-indigo-100 rounded-lg focus:outline-none focus:border-indigo-300 pl-4 h-10 text-sm"
           :placeholder="inputPlaceHolder"
           :disabled="!inputEnabled"
           @keyup.enter="clickSend"
         />
       </div>
     </div>
-    <div class="ml-4">
+    <div class="ml-2 flex-none h-10">
       <button
-        class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
+        class="flex items-center justify-center h-full bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
         @click="clickSend"
       >
-        <span>Send</span>
-        <span class="ml-2">
+        <span>
           <svg
             class="w-4 h-4 transform rotate-45 -mt-px"
             fill="none"
@@ -57,9 +57,6 @@ function clickSend() {
           </svg>
         </span>
       </button>
-    </div>
-    <div class="ml-4">
-      <AgentList />
     </div>
   </div>
 </template>
